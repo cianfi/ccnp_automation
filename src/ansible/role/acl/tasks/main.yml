@@ -1,0 +1,22 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Configure ACL
+  cisco.ios.ios_acls:
+    config:
+      - afi: ipv4
+        acls:
+          - acl_name: SSH_ACL
+            acl_type: standard
+            aces:
+              - remarks: This ACL is for SSH access
+                source:
+                  address: 10.0.0.0
+                  wildcard_bits: 0.0.0.255
+
+- name: Configure ACL on SSH
+  cisco.ios.ios_config:
+    parents:
+      - "line vty 0 15"
+    lines:
+      - "transport type ssh"
+      - "access-class SSH_ACL in"

@@ -1,1 +1,7 @@
 .venv/
+.env
+.envrc
+.vscode
+.ruff_cache
+
+__pycache__/
