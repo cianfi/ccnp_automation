@@ -1,0 +1,6 @@
+---
+- name: SetUp OSPF + ACL + MGMT
+  hosts: R1
+  gather_facts: no
+  roles:
+    - ospf
