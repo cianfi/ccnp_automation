@@ -1,0 +1,12 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Configure OSPF
+  cisco.ios.ios_ospfv2:
+    config:
+      processes:
+        "{{ ospf_config }}"
+          
+- name: Configure OSPF interface configuration
+  cisco.ios.ios_ospf_interfaces:
+    config:
+      "{{ ospf_interface_config }}"
