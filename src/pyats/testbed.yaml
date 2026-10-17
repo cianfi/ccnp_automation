@@ -1,0 +1,33 @@
+---
+testbed:
+  name: Network_Testbed
+  credentials:
+    default:
+      username: cisco
+      password: cisco
+
+devices:
+  router-1:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        port: 22
+        ip: 10.209.71.18
+  router-2:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        port: 22
+        ip: 10.209.71.19
+  router-3:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        port: 22
+        ip: 10.209.71.20

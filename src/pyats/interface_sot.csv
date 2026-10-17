@@ -1,0 +1,6 @@
+device,interface,description,ip
+router-1,GigabitEthernet1,,10.209.71.18
+router-1,GigabitEthernet2,,unassigned
+router-1,GigabitEthernet3,,unassigned
+router-1,GigabitEthernet4,,unassigned
+router-1,Loopback0,,192.168.3.67
