@@ -1,0 +1,18 @@
+---
+testbed:
+  name: MCP Devices
+  credentials:
+    default:
+      username: cisco
+      password: cisco
+
+devices:
+  router-1:
+    os: iosxe
+    type: router
+    connections:
+      defaults:
+        class: unicon.Unicon
+      cli:
+        protocol: ssh
+        ip: 10.209.71.18
