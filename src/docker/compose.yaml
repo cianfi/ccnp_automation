@@ -1,0 +1,20 @@
+services:
+  netbox-db:
+    image: postgres:15
+    environment:
+      - POSTGRES_PASSWORD=secret
+  
+  netbox:
+    image: netboxcommunity/netbox
+    ports:
+      - "8080:8080"
+    depends_on:
+      - netbox-db
+    environment:
+      - DB_WAIT_DEBUG=1
+  
+  ansible:
+    image: test:latest
+    volumes:
+      - .:/ansible
+    command: tail -f /dev/null
